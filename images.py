@@ -59,8 +59,6 @@ def resize_image(image_name):
     """
     
     path_to_image = HOME + '/Pictures/smbc/' + image_name
-    #resized = '/home/baptiste/Pictures/smbc/resized/' + image_name \
-    #          + 'r'
 
     get_height = Popen('identify -format "%h" '+path_to_image, 
                       stdout=PIPE, shell=True)
@@ -71,8 +69,6 @@ def resize_image(image_name):
 
     call(["mogrify","-resize",scale_fact,
           "-gravity","center",
-          #"-extent","1280x800",
-          #"-background","transparent",
           path_to_image])
 
 
@@ -98,7 +94,8 @@ def retrieve_image():
 
 def print_blur_screen(image):
     """
-    Takes a screenshot, blur it ; then, superimpose the last SMBC picture on it.
+    Takes a screenshot, blur it ; then, superimpose the last SMBC 
+    picture on it.
     """
 
     path_to_save = '/tmp/screenshot.png'
