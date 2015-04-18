@@ -33,7 +33,7 @@ if not os.path.isdir(HOME+'/Pictures/lockscreen'):
 images.retrieve_image()
 
 # Find the front picture among all pictures
-image = Popen('ls ~/Pictures/smbc/*.png | head -1',
+image = Popen('ls ~/Pictures/smbc/*.png | tail -1',
                          stdout=PIPE, shell=True)
 
 decoded_image = image.communicate()[0].decode('utf-8')
